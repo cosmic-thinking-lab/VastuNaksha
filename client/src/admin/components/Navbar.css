@@ -1,0 +1,55 @@
+.navbar {
+    padding: var(--spacing-sm) 0;
+    background-color: #fff;
+    border-bottom: 1px solid #e0e0e0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+     margin-bottom: 12px
+}
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    /* Space between icon and text logo */
+}
+
+.logo-icon {
+    height: 50px;
+    /* Adjust height match text logo */
+    width: auto;
+    display: block;
+}
+
+.logo-img {
+    height: 40px;
+    /* Slightly smaller or matching height */
+    width: auto;
+    display: block;
+}
+
+.navbar-links {
+    list-style: none;
+    display: flex;
+    gap: var(--spacing-lg);
+}
+
+.navbar-links a {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-main);
+    text-transform: capitalize;
+    transition: color 0.2s;
+}
+
+.navbar-links a:hover {
+    color: var(--accent);
+}

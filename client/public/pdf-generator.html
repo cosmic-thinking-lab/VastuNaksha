@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PDF Generator</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <script>
+        window.generatePDF = function() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            
+            // Set font and colors
+            doc.setFont('helvetica', 'bold');
+            doc.setFontSize(20);
+            doc.setTextColor(212, 163, 115);
+            
+            // Title
+            doc.text('VastuNaksha Digital Brochure', 20, 30);
+            
+            // Reset font for content
+            doc.setFont('helvetica', 'normal');
+            doc.setFontSize(12);
+            doc.setTextColor(0, 0, 0);
+            
+            // Content
+            let yPos = 50;
+            const lineHeight = 7;
+            
+            const content = [
+                '15 Years of Experience in Vastu Shastra',
+                '',
+                'TRANSFORM YOUR SPACE WITH ANCIENT WISDOM',
+                '',
+                'Our Expertise:',
+                '• 15+ Years of Professional Experience',
+                '• 5000+ Successful Projects Completed', 
+                '• Traditional Vastu Masters & Modern Architects',
+                '• Digital Precision with Ancient Wisdom',
+                '',
+                'SIGNATURE SERVICES',
+                '',
+                'FOUNDATION PLAN - ₹15,000',
+                'Perfect for: First-time homeowners & Budget-conscious families',
+                '✓ Comprehensive Vastu Assessment Report',
+                '✓ 2D Architectural Layout with Vastu Zones',
+                '✓ Room-wise Energy Flow Analysis',
+                '✓ Directional Compass & Entrance Guidance',
+                '',
+                'HARMONY DESIGN - ₹35,000 (MOST POPULAR)',
+                'Perfect for: Growing families & Construction projects',
+                '✓ Advanced Vastu + Architectural Integration',
+                '✓ Professional 2D Floor Plans (2 Revisions)',
+                '✓ Complete Electrical & Plumbing Layout',
+                '✓ Construction-Ready Drawings',
+                '',
+                'LUXURY MASTERPIECE - ₹80,000',
+                'Perfect for: Premium homes & Commercial spaces',
+                '✓ Complete Architectural & Vastu Mastery',
+                '✓ 3D Visualization & Photorealistic Renders',
+                '✓ Unlimited Design Revisions',
+                '✓ Premium Material & Color Consultation',
+                '',
+                'OUR PROVEN PROCESS',
+                '1. CONSULTATION: Share your vision and requirements',
+                '2. ANALYSIS: Expert Vastu space analysis',
+                '3. DESIGN: Custom architectural plans',
+                '4. REFINEMENT: Collaborative revisions',
+                '5. DELIVERY: Complete package with lifetime support',
+                '',
+                'CONTACT US',
+                'Website: https://vastu-naksha.vercel.app',
+                'Email: hello@vastunaksha.online',
+                '',
+                '© 2025 VastuNaksha | A Product by Cosmic Thinking Lab'
+            ];
+            
+            content.forEach((line, index) => {
+                if (yPos > 270) {
+                    doc.addPage();
+                    yPos = 20;
+                }
+                
+                if (line.includes('SIGNATURE SERVICES') || line.includes('OUR PROVEN PROCESS') || line.includes('CONTACT US')) {
+                    doc.setFont('helvetica', 'bold');
+                    doc.setFontSize(14);
+                    doc.setTextColor(212, 163, 115);
+                } else if (line.includes('PLAN') || line.includes('DESIGN') || line.includes('MASTERPIECE')) {
+                    doc.setFont('helvetica', 'bold');
+                    doc.setFontSize(12);
+                    doc.setTextColor(0, 0, 0);
+                } else {
+                    doc.setFont('helvetica', 'normal');
+                    doc.setFontSize(10);
+                    doc.setTextColor(0, 0, 0);
+                }
+                
+                doc.text(line, 20, yPos);
+                yPos += lineHeight;
+            });
+            
+            return doc;
+        };
+    </script>
+</body>
+</html>

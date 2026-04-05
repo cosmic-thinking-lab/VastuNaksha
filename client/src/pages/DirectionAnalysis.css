@@ -1,0 +1,239 @@
+.direction-analysis-page {
+    background-color: #fcfaff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    /* Prevent horizontal scrolling */
+    width: 100%;
+    /* Ensure it does not exceed viewport */
+}
+
+.da-container {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex: 1;
+}
+
+.da-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.da-header h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 15px;
+    font-family: 'Outfit', sans-serif;
+}
+
+.da-header p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.da-main-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 60vh;
+    /* Ensure some vertical space */
+}
+
+.da-center.full-width {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.compass-container {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.compass-visual-wrapper {
+    position: relative;
+    width: 90vw;
+    max-width: 450px;
+    aspect-ratio: 1;
+    height: auto;
+    border-radius: 50%;
+    /* Removed background and shadow for a cleaner PNG look */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.compass-img {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+    /* Removed transition for immediate response as requested */
+}
+
+.compass-center-dot {
+    display: none;
+    /* Removed as requested for a clean PNG look */
+}
+
+.compass-white-circle {
+    display: none;
+    /* Removed as requested for a clean PNG look */
+}
+
+.compass-arrow-marker {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 15px solid var(--primary);
+    /* Pointing down to indicate North on the compass when aligned */
+    z-index: 5;
+    margin-top: -25px;
+    /* Position above the compass */
+}
+
+.compass-status {
+    text-align: center;
+    width: 100%;
+}
+
+.current-direction {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 20px;
+    font-family: 'Outfit', sans-serif;
+}
+
+.direction-label {
+    font-size: 1.2rem;
+    color: #555;
+    margin-left: 10px;
+    font-weight: 500;
+}
+
+.btn-start-compass {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.btn-start-compass:hover {
+    background-color: #d68c45;
+    /* Darker shade of primary if available, or just fallback */
+    transform: translateY(-2px);
+}
+
+.compass-error {
+    color: red;
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+.manual-override {
+    margin-top: 30px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 1px dashed #ccc;
+}
+
+.manual-label {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.compass-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(to right, #0066cc var(--slider-val), #a0a0a0 var(--slider-val));
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    margin: 20px 0;
+}
+
+/* Webkit (Chrome, Safari, Edge, Opera) */
+.compass-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 32px;
+    height: 32px;
+    background: #fff;
+    border-radius: 50%;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    position: relative;
+    /* Creating the centered blue dot */
+    background-image: radial-gradient(circle, #0066cc 6px, #ffffff 7px);
+}
+
+/* Mozilla (Firefox) */
+.compass-slider::-moz-range-thumb {
+    width: 32px;
+    height: 32px;
+    background: #fff;
+    border-radius: 50%;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    background-image: radial-gradient(circle, #0066cc 6px, #ffffff 7px);
+}
+
+.compass-slider::-moz-range-track {
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(to right, #0066cc var(--slider-val), #a0a0a0 var(--slider-val));
+    border-radius: 5px;
+}
+
+@media (max-width: 1024px) {
+    .da-main-content {
+        flex-direction: column;
+        gap: 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    .da-container {
+        padding: 40px 20px;
+    }
+
+    .da-header {
+        margin-bottom: 30px;
+    }
+
+    .da-header h1 {
+        font-size: 1.8rem;
+        overflow-wrap: break-word;
+        padding: 0 10px;
+    }
+
+    .da-main-content {
+        gap: 30px;
+    }
+}

@@ -1,0 +1,264 @@
+.contact-section {
+    padding: 2.5rem 0 5rem;
+    background-color: #ffffff;
+}
+
+.section-title-left {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 2.5rem;
+    color: #1a1a1a;
+    font-family: 'Outfit', sans-serif;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+    align-items: start;
+}
+
+.contact-form-wrapper {
+    width: 100%;
+}
+
+.contact-info-wrapper {
+    width: 100%;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    width: 100%;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #333;
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    font-size: 1rem;
+    background-color: #fcfcfc !important;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    background-color: #fff !important;
+}
+
+.file-upload {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.btn-upload {
+    padding: 12px 24px;
+    background-color: #452905;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.btn-upload:hover {
+    background-color: #c49363;
+}
+
+.file-name {
+    font-size: 0.9rem;
+    color: #666;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.submit-btn {
+    padding: 16px 32px;
+    margin-top: var(--spacing-sm);
+    width: 100%;
+    background-color: #452905;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #2c1a03;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(69, 41, 5, 0.2);
+}
+
+.consultation-card {
+    background-color: #FAF6F3;
+    padding: 3rem 2rem;
+    border-radius: 16px;
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    margin-top: 1.5rem;
+}
+
+.consultation-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-md);
+    color: #000;
+}
+
+.consultation-card p {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.6;
+}
+
+.book-btn {
+    background-color: #452905;
+    color: #fff;
+    border: none;
+    padding: 16px 32px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.book-btn:hover {
+    background-color: #2c1a03;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(69, 41, 5, 0.2);
+}
+
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
+    .contact-grid {
+        gap: var(--spacing-lg);
+    }
+
+    .section-title-left {
+        font-size: 1.75rem;
+    }
+}
+
+/* Mobile (max 768px) */
+@media (max-width: 768px) {
+    .contact-section {
+        padding: var(--spacing-lg) 0;
+    }
+
+    .section-title-left {
+        text-align: center;
+        font-size: 1.5rem;
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+
+    .contact-form {
+        max-width: 100%;
+    }
+
+    .file-upload {
+        flex-wrap: wrap;
+    }
+
+    .file-name {
+        flex: 1;
+        min-width: 150px;
+    }
+
+    .submit-btn {
+        width: 100%;
+    }
+
+    .consultation-card {
+        padding: var(--spacing-lg);
+    }
+
+    .consultation-card h3 {
+        font-size: 1.25rem;
+    }
+
+    .book-btn {
+        width: 100%;
+    }
+}
+
+/* Small Mobile (max 480px) */
+@media (max-width: 480px) {
+    .contact-section {
+        padding: var(--spacing-md) 0;
+    }
+
+    .section-title-left {
+        font-size: 1.25rem;
+        margin-bottom: var(--spacing-md);
+    }
+
+    .contact-grid {
+        gap: var(--spacing-md);
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    .btn-upload {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+
+    .file-upload {
+        gap: 8px;
+    }
+
+    .file-name {
+        font-size: 0.8rem;
+    }
+
+    .consultation-card {
+        padding: var(--spacing-md);
+    }
+
+    .consultation-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .consultation-card p {
+        font-size: 0.85rem;
+    }
+
+    .book-btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}

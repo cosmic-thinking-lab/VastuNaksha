@@ -1,0 +1,164 @@
+.how-it-works {
+  padding: var(--spacing-xl) 0;
+}
+
+.how-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xl);
+  align-items: center;
+}
+
+.section-title-left {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-lg);
+  color: #000;
+}
+
+.steps-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.step-item {
+  background: linear-gradient(90deg, #fefefe 10%, #f48506 150%);
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius: 8px;
+  color: #333;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 0.8s ease-out forwards;
+  opacity: 0;
+  /* Start hidden for animation */
+}
+
+.step-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.step-item:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.step-item:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.step-item:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.step-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: #333;
+}
+
+.step-desc {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #555;
+}
+
+.how-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  /* Needed for absolute positioning of background */
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.how-pattern-bg {
+  position: absolute;
+  width: 105%;
+  /* Tighter fit like desktop */
+  height: auto;
+  z-index: 0;
+  /* Behind */
+  animation: spinSlow 30s linear infinite;
+  opacity: 0.8;
+}
+
+.how-graphic-img {
+  width: 100%;
+  max-width: 530px;
+  /* Reduced from 550px to 530px */
+  height: auto;
+  position: relative;
+  z-index: 1;
+  /* On top */
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+  animation: spinSlowReverse 45s linear infinite;
+}
+
+@keyframes spinSlowReverse {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .how-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .how-content {
+    text-align: center;
+  }
+
+  .how-image {
+    order: -1;
+    margin: 0 auto 3rem auto;
+  }
+
+  .how-pattern-bg {
+    width: 105%;
+  }
+
+  .how-graphic-img {
+    max-width: 350px;
+    /* Reduce size slightly */
+  }
+}
+
+@media (max-width: 480px) {
+  .how-graphic-img {
+    max-width: 320px;
+  }
+
+  .how-image {
+    min-height: 300px;
+  }
+}

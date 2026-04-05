@@ -1,0 +1,312 @@
+.pricing {
+    padding: var(--spacing-xl) 0;
+    background-color: #fff;
+}
+
+.pricing .section-title {
+    margin-bottom: var(--spacing-lg);
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+    align-items: stretch;
+    padding-top: 20px;
+    /* Space for the badges sticking out */
+}
+
+.pricing-card {
+    border: 2px solid #452905;
+    border-radius: 20px;
+    padding: 40px var(--spacing-lg);
+    position: relative;
+    transition: all 0.3s ease;
+    background-color: #fff;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 600px;
+}
+
+.active-badge {
+    position: absolute;
+    top: -14px;
+    /* Move up to sit on the border */
+    right: 20px;
+    /* Inset from right */
+    background-color: #fff;
+    /* Match card bg */
+    color: #452905;
+    /* Match border color */
+    padding: 2px 16px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    border: 2px solid #452905;
+    /* Match card border */
+    text-transform: capitalize;
+    z-index: 2;
+}
+
+/* On hover (Brown Card) */
+.pricing-card:hover {
+    background-color: #795e42;
+    border-color: #795e42;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.pricing-card:hover .active-badge {
+    background: linear-gradient(110deg, #FFD700 0%, #FFFACD 50%, #FFD700 100%);
+    background-size: 200% 100%;
+    border-color: #FFD700;
+    color: #452905;
+    animation: shimmer 2s linear infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+.plan-header {
+    text-align: center;
+    margin-bottom: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding-bottom: var(--spacing-md);
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.plan-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #000;
+}
+
+.plan-best-for {
+    font-size: 0.75rem;
+    color: #666;
+    font-style: italic;
+}
+
+.plan-price-main {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: #000;
+    margin-top: 8px;
+}
+
+.plan-sqft-row {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.sqft-old {
+    text-decoration: line-through;
+    color: #999;
+}
+
+.sqft-current {
+    color: #452905;
+}
+
+.plan-includes {
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.plan-includes h4 {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 12px;
+}
+
+.plan-includes ul {
+    list-style: none;
+    padding: 0;
+}
+
+.plan-includes ul li {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 8px;
+    padding-left: 16px;
+    position: relative;
+}
+
+.plan-includes ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #452905;
+}
+
+.plan-features-section h4 {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 12px;
+}
+
+.plan-features-section {
+    margin-bottom: auto;
+    flex-grow: 1;
+}
+
+.plan-features {
+    list-style: none;
+    margin-bottom: var(--spacing-md);
+    text-align: left;
+    flex-grow: 1;
+}
+
+.plan-features li {
+    margin-bottom: 12px;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+    color: #333;
+}
+
+.icon-wrapper {
+    width: 24px;
+    display: flex;
+    justify-content: center;
+}
+
+.check-circle {
+    width: 20px;
+    height: 20px;
+    background-color: #7BB03B;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cross-text {
+    color: #999;
+    font-size: 14px;
+}
+
+.excluded {
+    color: #999;
+}
+
+.btn-plan {
+    width: auto;
+    min-width: 140px;
+    margin: var(--spacing-md) auto 0;
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    background-color: #4A3B2C;
+    color: #fff;
+    transition: all 0.3s ease;
+    align-self: center;
+}
+
+/* Hover Content Colors */
+.pricing-card:hover .plan-name,
+.pricing-card:hover .plan-price-main,
+.pricing-card:hover .plan-sqft-row,
+.pricing-card:hover .sqft-current,
+.pricing-card:hover .plan-features li,
+.pricing-card:hover .plan-best-for,
+.pricing-card:hover .plan-includes h4,
+.pricing-card:hover .plan-features-section h4 {
+    color: #fff;
+}
+
+.pricing-card:hover .sqft-old {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.pricing-card:hover .plan-includes ul li {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.pricing-card:hover .plan-includes ul li::before {
+    color: #fff;
+}
+
+.pricing-card:hover .plan-header {
+    border-bottom-color: rgba(255, 255, 255, 0.2);
+}
+
+.pricing-card:hover .plan-includes {
+    border-bottom-color: rgba(255, 255, 255, 0.2);
+}
+
+.pricing-card:hover .check-circle {
+    background-color: #7BB03B;
+    border: 1px solid #fff;
+}
+
+.pricing-card:hover .cross-text {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.pricing-card:hover .excluded {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.pricing-card:hover .btn-plan {
+    background-color: #fff;
+    color: #4A3B2C;
+}
+
+@media (max-width: 1024px) {
+    .pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-md);
+    }
+}
+
+@media (max-width: 768px) {
+    .pricing {
+        padding: var(--spacing-xl) var(--spacing-md);
+    }
+
+    .pricing-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        max-width: 450px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .pricing-card {
+        padding: 30px var(--spacing-md);
+    }
+}
+
+@media (max-width: 480px) {
+    .plan-price-main {
+        font-size: 1.5rem;
+    }
+
+    .plan-name {
+        font-size: 1.1rem;
+    }
+}
